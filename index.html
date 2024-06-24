@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GoodAir</title>
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/grid.css" />
+    <link rel="stylesheet" href="css/slider.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="background-video">
+      <video autoplay muted loop id="bgVideo">
+        <source src="video/background.mp4" type="video/mp4" />
+      </video>
+
+      <nav class="navbar">
+        <div class="navbar-container">
+          <div class="navbar-title">
+            <div class="navbar-logo">
+              <img src="image/Logo.png" alt="" width="10%" />
+              <div>GoodAir</div>
+            </div>
+          </div>
+          <div class="navbar-element">
+            <ul>
+              <li><a href="#Home" class="nav-link">Home</a></li>
+              <li><a href="#Map" class="nav-link">AQI Map</a></li>
+              <li><a href="#Cause" class="nav-link">Cause</a></li>
+              <li><a href="#Effect" class="nav-link">Effect</a></li>
+              <li><a href="#Prevention" class="nav-link">Prevention</a></li>
+              <li><a href="#Join_Us" class="nav-link">Join Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!--Home content-->
+      <div class="home">
+        <section id="Home">
+          <div class="slider-container">
+            <div class="slider">
+              <div class="slide active">
+                <img src="image/intro1.jpg" alt="Intro 1" />
+                <div class="text-content">
+                  <h2>Welcome to GoodAir!</h2>
+                  <p>
+                    At GoodAir, our mission is to raise public awareness about
+                    the critical issue of air pollution. We believe that clean
+                    air is essential for human survival and overall well-being.
+                    Without it, our health and quality of life are at serious
+                    risk. We are dedicated to addressing air pollution in
+                    Malaysia by providing real-time air quality data. Our
+                    website serves as a comprehensive resource for individuals,
+                    communities, and organizations committed to improving air
+                    quality and protecting our environment. Join us in our
+                    efforts to ensure a healthier future for everyone.
+                  </p>
+                </div>
+              </div>
+              <div class="slide">
+                <img src="image/intro2.jpeg" alt="Intro 2" />
+                <div class="text-content">
+                  <h2>Welcome to GoodAir!</h2>
+                  <p>
+                    At GoodAir, our mission is to raise public awareness about
+                    the critical issue of air pollution. We believe that clean
+                    air is essential for human survival and overall well-being.
+                    Without it, our health and quality of life are at serious
+                    risk. We are dedicated to addressing air pollution in
+                    Malaysia by providing real-time air quality data. Our
+                    website serves as a comprehensive resource for individuals,
+                    communities, and organizations committed to improving air
+                    quality and protecting our environment. Join us in our
+                    efforts to ensure a healthier future for everyone.
+                  </p>
+                </div>
+              </div>
+              <div class="slide">
+                <img src="image/intro3.png" alt="Intro 3" />
+                <div class="text-content">
+                  <h2>Welcome to GoodAir!</h2>
+                  <p>
+                    At GoodAir, our mission is to raise public awareness about
+                    the critical issue of air pollution. We believe that clean
+                    air is essential for human survival and overall well-being.
+                    Without it, our health and quality of life are at serious
+                    risk. We are dedicated to addressing air pollution in
+                    Malaysia by providing real-time air quality data. Our
+                    website serves as a comprehensive resource for individuals,
+                    communities, and organizations committed to improving air
+                    quality and protecting our environment. Join us in our
+                    efforts to ensure a healthier future for everyone.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <button class="arrow left-arrow" id="left-arrow">❮</button>
+            <button class="arrow right-arrow" id="right-arrow">❯</button>
+          </div>
+        </section>
+      </div>
+
+      <!--Map content-->
+      <section id="Map">
+        <div class="main">
+          <div class="map" id="map"></div>
+          <div class="map-content">
+            <div class="search-box">
+              <div class="search">
+                <label for="searchInput">City Name</label>
+                <input
+                  type="text"
+                  placeholder="Enter a valid location"
+                  class="searchInput"
+                  id="searchInput"
+                />
+                <button id="searchButton">Submit</button>
+              </div>
+            </div>
+
+            <div class="city-aqi-container">
+              <div class="aqi-result" id="city-aqi-container"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- AQI table content -->
+      <section id="AQI">
+        <div class="aqi-table">
+          <h1 class="title">AQI Table</h1>
+          <table class="aqi-table">
+            <thead>
+              <tr>
+                <th>AQI</th>
+                <th>Air Pollution Level</th>
+                <th>Health Implications</th>
+                <th>Cautionary Statement (for PM2.5)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>0 - 50</td>
+                <td>Good</td>
+                <td>
+                  Air quality is considered satisfactory, and air pollution
+                  poses little or no risk.
+                </td>
+                <td>None</td>
+              </tr>
+              <tr>
+                <td>51 - 100</td>
+                <td>Moderate</td>
+                <td>
+                  Air quality is acceptable; however, for some pollutants there
+                  may be a moderate health concern for a very small number of
+                  people who are unusually sensitive to air pollution.
+                </td>
+                <td>
+                  Active children and adults, and people with respiratory
+                  disease, such as asthma, should limit prolonged outdoor
+                  exertion.
+                </td>
+              </tr>
+              <tr>
+                <td>101 - 150</td>
+                <td>Unhealthy for Sensitive Groups</td>
+                <td>
+                  Members of sensitive groups may experience health effects. The
+                  general public is not likely to be affected.
+                </td>
+                <td>
+                  Active children and adults, and people with respiratory
+                  disease, such as asthma, should limit prolonged outdoor
+                  exertion.
+                </td>
+              </tr>
+              <tr>
+                <td>151 - 200</td>
+                <td>Unhealthy</td>
+                <td>
+                  Everyone may begin to experience health effects; members of
+                  sensitive groups may experience more serious health effects.
+                </td>
+                <td>
+                  Active children and adults, and people with respiratory
+                  disease, such as asthma, should avoid prolonged outdoor
+                  exertion; everyone else, especially children, should limit
+                  prolonged outdoor exertion.
+                </td>
+              </tr>
+              <tr>
+                <td>201 - 300</td>
+                <td>Very Unhealthy</td>
+                <td>
+                  Health warnings of emergency conditions. The entire population
+                  is more likely to be affected.
+                </td>
+                <td>
+                  Active children and adults, and people with respiratory
+                  disease, such as asthma, should avoid all outdoor exertion;
+                  everyone else, especially children, should limit outdoor
+                  exertion.
+                </td>
+              </tr>
+              <tr>
+                <td>300+</td>
+                <td>Hazardous</td>
+                <td>
+                  Health alert: everyone may experience more serious health
+                  effects.
+                </td>
+                <td>Everyone should avoid all outdoor exertion.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Content for Causes -->
+      <section id="Cause">
+        <div class="container">
+          <h1 class="title">Causes of Air Pollution</h1>
+          <div class="video-container">
+            <video id="video" width="560" height="315" controls>
+              <source
+                src="video/Air Pollution 101 _ National Geographic.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+
+          <div class="grid-container">
+            <div class="grid-item" id="item1">
+              <h2>Deforestation</h2>
+              <p>
+                The combustion of fossil fuels such as coal, oil, and natural
+                gas in power plants, vehicles, and industrial processes releases
+                a variety of pollutants, including sulfur dioxide (SO2), carbon
+                monoxide (CO), nitrogen oxides (NOx), and particulate matter
+                (PM). These pollutants contribute to smog, acid rain, and
+                respiratory problems.
+              </p>
+            </div>
+            <div class="grid-item" id="item2">
+              <h2>Industrial Emissions</h2>
+              <p>
+                Factories and industrial activities emit significant amounts of
+                pollutants, including hydrocarbons, volatile organic compounds
+                (VOCs), carbon monoxide, and other chemicals. These degrade air
+                quality and can lead to health issues such as respiratory and
+                cardiovascular diseases.
+              </p>
+            </div>
+            <div class="grid-item" id="item3">
+              <h2>Transportation</h2>
+              <p>
+                Vehicles, including cars, trucks, buses, and airplanes, emit
+                pollutants such as carbon monoxide (CO), nitrogen oxides (NOx),
+                hydrocarbons, and particulate matter (PM). These emissions
+                contribute significantly to urban air pollution and smog
+                formation.
+              </p>
+            </div>
+            <div class="grid-item" id="item4">
+              <h2>Agricultural Activities</h2>
+              <p>
+                Agriculture contributes to air pollution through the release of
+                ammonia (NH3) from fertilizers and animal waste, as well as
+                pesticides and insecticides. Additionally, practices like
+                burning crop residues release harmful gases and particulate
+                matter into the atmosphere.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--Effect Content-->
+      <section id="Effect">
+        <div class="container">
+          <h1 class="title">Effects of Air Pollution</h1>
+          <div class="effect">
+            <div class="section humans">
+              <h2>Humans</h2>
+              <div class="effect-content">
+                <div class="effect-card yellow">
+                  <h3>Respiratory Disease</h3>
+                  <p>
+                    Air pollution can cause chronic obstructive pulmonary
+                    disease (COPD), asthma, and lung cancer in humans.
+                  </p>
+                </div>
+                <div class="effect-card blue">
+                  <h3>Cardiovascular Diseases</h3>
+                  <p>
+                    Air pollution significantly impacts cardiovascular health
+                    through mechanisms involving systemic inflammation and
+                    oxidative stress.
+                  </p>
+                </div>
+                <div class="effect-card yellow">
+                  <h3>​Cancer</h3>
+                  <p>
+                    ​Air pollution is linked to various cancers, including lung
+                    cancer and potentially breast cancer.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="section environment">
+              <h2>Environment</h2>
+              <div class="effect-content">
+                <div class="effect-card blue">
+                  <h3>Acid Rain</h3>
+                  <p>
+                    Air pollutants like sulfur dioxide (SO₂) and nitrogen oxides
+                    (NOₓ) cause acid rain, which damages soil, water bodies, and
+                    plants. Acid rain makes soil acidic and harms aquatic life.
+                  </p>
+                </div>
+                <div class="effect-card yellow">
+                  <h3>Ozone Damage</h3>
+                  <p>
+                    Ground-level ozone can significantly damage crops, forests,
+                    and other vegetation by reducing photosynthesis and growth
+                    rates.
+                  </p>
+                </div>
+                <div class="effect-card blue">
+                  <h3>​Global Warming</h3>
+                  <p>
+                    ​Greenhouse gases like carbon dioxide (CO₂) and methane
+                    (CH₄) contribute to global warming, leading to climate
+                    change such as rising sea levels and extreme weather events.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Prevention -->
+      <section id="Prevention">
+        <div class="container">
+          <h1 class="title">Prevention Method</h1>
+
+          <div class="prevention-content">
+            <div class="method1">
+              <div class="pic1">
+                <img src="image/public_transport.jpg" />
+              </div>
+              <div class="prevention1">
+                <div class="prevention-header-1">
+                  Use of Public Transportation
+                </div>
+                <div class="prevention-text">
+                  <p>
+                    Individuals can significantly reduce air pollution by
+                    adopting sustainable transportation habits. Walking or
+                    biking for short trips can greatly decrease vehicle
+                    emissions. Using public transportation like buses, trains,
+                    or subways instead of personal vehicles also helps reduce
+                    the number of cars on the road. Carpooling with fri​ends or
+                    colleagues is another effective way to lower vehicle use and
+                    cut emissions.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="method2">
+              <div class="prevention2">
+                <div class="prevention-header-2">​Energy Conservation</div>
+
+                <div class="prevention-text">
+                  ​Conserving energy at home is crucial for preventing air
+                  pollution. Turning off lights and unplugging appliances when
+                  not in use saves energy and reduces emissions. Using
+                  energy-efficient products like ENERGY STAR-rated appliances
+                  and LED bulbs can significantly cut energy consumption.
+                </div>
+              </div>
+              <div class="pic2">
+                <img src="image/energy conserve.jpeg" />
+              </div>
+            </div>
+
+            <div class="method3">
+              <div class="pic3"><img src="image/recycle.jpg" /></div>
+              <div class="prevention3">
+                <div class="prevention-header">​Waste Management</div>
+
+                <div class="prevention-text">
+                  ​Effective waste management practices are essential for
+                  reducing air pollution. Recycling and reusing materials can
+                  minimize pollution from waste processing. Composting yard
+                  waste instead of burning it prevents the release of harmful
+                  pollutants into the air. 
+                </div>
+              </div>
+            </div>
+
+            <div class="method4">
+              <div class="prevention4">
+                <div class="prevention-header-2">​Household Practices</div>
+
+                <div class="prevention-text">
+                  ​Using non-toxic cleaning products and low-VOC paints can
+                  reduce the release of volatile organic compounds (VOCs) into
+                  the air. Limiting the use of wood-burning fireplaces and
+                  s​toves, and considering gas logs instead, can also help
+                  reduce indoor air pollution.​ Additionally, using electric or
+                  hand-powered lawn equipment instead of gas-powered engines can
+                  significantly reduce emissions of carbon dioxide.
+                </div>
+              </div>
+              <div class="pic4">
+                <img src="image/pop-electric-lawnmowers2-65f34ff4716a6.jpg" />
+              </div>
+            </div>
+
+            <div class="method5">
+              <div class="pic5">
+                <img src="image/tree planting.jpg" />
+              </div>
+              <div class="prevention5">
+                <div class="prevention-header">​Community Involvement</div>
+
+                <div class="prevention-text">
+                  ​Supporting clean air initiatives and participating in local
+                  programs aimed at reducing air pollution can have a profound
+                  impact. Engaging in tree planting activities not only helps
+                  absorb pollutants but also significantly improves air
+                  quality. 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--Join Us-->
+      <section id="Join_Us">
+        <div class="contact-container">
+          <h1 class="contact-title">Join Us Today</h1>
+          <div class="contact-content">
+            <div class="contact-info">
+              <div class="address">
+                <h2>Address</h2>
+                <p>Jalan Ayer Keroh Lama, 75450 Bukit Beruang, Melaka</p>
+              </div>
+              <div class="phone">
+                <h2>Call us</h2>
+                <p>+60111063285</p>
+              </div>
+              <div class="email">
+                <h2>Email us</h2>
+                <p>hoemun2020@gmail.com</p>
+              </div>
+            </div>
+            <div class="contact-form">
+              <form>
+                <div class="form-group">
+                  <label for="first-name">First Name</label>
+                  <input
+                    type="text"
+                    id="first-name"
+                    name="first-name"
+                    placeholder="Enter your First Name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="last-name">Last Name</label>
+                  <input
+                    type="text"
+                    id="last-name"
+                    name="last-name"
+                    placeholder="Enter your Last Name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="abc@gmail.com"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    pattern="^0\d{2}-\d{7,8}$"
+                    placeholder="012-6318827"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Leave us a message"
+                  ></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div class="footer-logo">
+          <img src="image/footer.png" alt="footer logo" />
+        </div>
+        <div class="footer-text">
+          <p>&copy;GoodAir - All Rights Reserved</p>
+        </div>
+      </footer>
+    </div>
+    <script
+      type="text/javascript"
+      src="javascript/aqi.js"
+      charset="utf-8"
+      defer
+    ></script>
+    <script type="text/javascript" src="javascript/map.js" defer></script>
+    <script
+      type="text/javascript"
+      src="http://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AkJDA1xVwkFLl0WSwwgsjPTHEtM5fVjAsPt4BAId9CW4muifi32m9g4VNCCWFUXh"
+      async
+      defer
+    ></script>
+    <script src="javascript/slider.js"></script>
+    <script src="javascript/index.js"></script>
+  </body>
+</html>
